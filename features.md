@@ -45,7 +45,7 @@
 
 * szerkeszthető grid
 * header/detail grid
-* üüsszesítő sorok
+* összesítő sorok
 
 
  
