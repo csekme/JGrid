@@ -20,8 +20,8 @@
     * Két string (Y/N, I/N, Yes/No, stb)
   * kép  
 * kijelölés
- * single row
- * multiple row
+  * single row
+  * multiple row
 * elrendezés
   * oszlop fejlécre kattintva sorrend
   * oszlop mozgatás drag&drop
