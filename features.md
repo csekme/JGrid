@@ -18,7 +18,10 @@
     * 2-state, 3-state
     * checkbox
     * Két string (Y/N, I/N, Yes/No, stb)
-  * kép    
+  * kép  
+* kijelölés
+ * single row
+ * multiple row
 * elrendezés
   * oszlop fejlécre kattintva sorrend
   * oszlop mozgatás drag&drop
