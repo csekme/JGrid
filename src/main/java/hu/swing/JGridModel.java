@@ -16,7 +16,7 @@ public class JGridModel implements TableModel {
      */
     @Override
     public int getRowCount() {
-        return 1;
+        return 0;
     }
 
     /**
