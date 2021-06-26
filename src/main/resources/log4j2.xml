@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns:xi="http://www.w3.org/2001/XInclude">
+    <Appenders>
+        <Console name="SlowConsole" target="SYSTEM_OUT">
+            <PatternLayout disableAnsi="false" pattern="%highlight{%d{HH:mm:ss.SSS} %-5level %logger{36}.%M() @%L - %msg%n}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=gray, DEBUG=green bold, TRACE=blue}" />
+        </Console>
+
+    </Appenders>
+    <Loggers>
+        <Root level="TRACE">
+            <AppenderRef ref="SlowConsole" />
+        </Root>
+    </Loggers>
+</Configuration>

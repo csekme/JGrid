@@ -39,6 +39,7 @@ public enum Type {
         return value;
     }
 
+
     public Class<?> toJavaClass() {
         switch (this) {
             case BOOLEAN: return Boolean.class;
