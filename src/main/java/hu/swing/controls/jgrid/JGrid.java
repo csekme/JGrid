@@ -1,10 +1,13 @@
 package hu.swing.controls.jgrid;
 
+import hu.swing.controls.jgrid.descriptor.GridColumnDescriptor;
+import hu.swing.controls.jgrid.descriptor.GridDescriptor;
 import hu.swing.controls.jgrid.interfaces.JGridTableModel;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
@@ -25,13 +28,20 @@ public class JGrid extends JScrollPane {
      */
     private Long gridIndex=null;
 
-    public JGrid(JGridTableModel model ) {
+    public JGrid(JGridTableModel model, GridDescriptor gd) {
         super();
         this.table = new JTable(this.model = model);
         model.setTable(table);
         table.setRowSorter(tableRowSorter = new TableRowSorter(model));
         table.setRowSelectionAllowed(true);
         table.getTableHeader().setFont(defaultFont);
+
+        for(int i=0 ; i< gd.size(); ++i){
+            GridColumnDescriptor d = gd.get(i);
+            TableColumn col = table.getColumnModel().getColumn(i);
+            col.setCellRenderer(new GenericTableCellRenderer(d, defaultFont));
+            col.setPreferredWidth(d.getPreferredWidth());
+        }
 
         getViewport().add(table);
 

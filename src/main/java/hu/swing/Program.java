@@ -1,8 +1,10 @@
 package hu.swing;
 
+import hu.swing.controls.jgrid.samples.PersonBrowser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.awt.*;
 import java.sql.*;
 
 /**
@@ -28,7 +30,7 @@ public class Program {
                     branchCsekme();
                     break;
                 default:
-                    logger.warn("use one of the following discrete arguments: ballonyi,csekme");
+                    logger.error("use one of the following discrete arguments: ballonyi,csekme");
             }
         } else {
             logger.warn("use one of the following discrete arguments: ballonyi,csekme");
@@ -40,6 +42,11 @@ public class Program {
      */
     public static void branchBallonyi() {
         logger.info("Switch to branch of Ballonyi");
+
+        PersonBrowser m = new PersonBrowser();
+        m.setVisible(true);
+        m.setSize(new Dimension(650, 300));
+        m.validate();
     }
 
     /**
